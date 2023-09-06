@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="Assignment_01Service" targetNamespace="http://webservice.soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://webservice.soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <wsdl:types>
+    <schema xmlns="http://www.w3.org/2001/XMLSchema">
+  <import namespace="http://webservice.soap/" schemaLocation="assignment_01_schema1.xsd"/>
+</schema>
+  </wsdl:types>
+  <wsdl:message name="retrieveMarksResponse">
+    <wsdl:part name="parameters" element="tns:retrieveMarksResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="retrieveMarks">
+    <wsdl:part name="parameters" element="tns:retrieveMarks">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="storeMarks">
+    <wsdl:part name="parameters" element="tns:storeMarks">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="storeMarksResponse">
+    <wsdl:part name="parameters" element="tns:storeMarksResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="Assignment_01">
+    <wsdl:operation name="retrieveMarks">
+      <wsdl:input name="retrieveMarks" message="tns:retrieveMarks">
+    </wsdl:input>
+      <wsdl:output name="retrieveMarksResponse" message="tns:retrieveMarksResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="storeMarks">
+      <wsdl:input name="storeMarks" message="tns:storeMarks">
+    </wsdl:input>
+      <wsdl:output name="storeMarksResponse" message="tns:storeMarksResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="Assignment_01ServiceSoapBinding" type="tns:Assignment_01">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="retrieveMarks">
+      <soap:operation soapAction="urn:RetrieveMarks" style="document"/>
+      <wsdl:input name="retrieveMarks">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="retrieveMarksResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="storeMarks">
+      <soap:operation soapAction="urn:StoreMarks" style="document"/>
+      <wsdl:input name="storeMarks">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="storeMarksResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Assignment_01Service">
+    <wsdl:port name="Assignment_01Port" binding="tns:Assignment_01ServiceSoapBinding">
+      <soap:address location="http://localhost:8080/E2041327_Assignment_01/services"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

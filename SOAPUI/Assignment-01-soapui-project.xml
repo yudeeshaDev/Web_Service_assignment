@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="e4ba5881-e817-40bf-9e51-e59e61650d6f" activeEnvironment="Default" name="Assignment_01" resourceRoot="" soapui-version="5.7.0" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="0ecd1126-2b3a-4c2f-9592-60349c36e33f" wsaVersion="NONE" name="Assignment_01ServiceSoapBinding" type="wsdl" bindingName="{http://webservice.soap/}Assignment_01ServiceSoapBinding" soapVersion="1_1" anonymous="optional" definition="http://localhost:8080/E2041327_Assignment_01/services/Assignment_01Port?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://localhost:8080/E2041327_Assignment_01/services/Assignment_01Port?wsdl"><con:part><con:url>http://localhost:8080/E2041327_Assignment_01/services/Assignment_01Port?wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="Assignment_01Service" targetNamespace="http://webservice.soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://webservice.soap/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <wsdl:types>
+    <schema xmlns="http://www.w3.org/2001/XMLSchema">
+      <import namespace="http://webservice.soap/" schemaLocation="http://localhost:8080/E2041327_Assignment_01/services/Assignment_01Port?xsd=assignment_01_schema1.xsd"/>
+    </schema>
+  </wsdl:types>
+  <wsdl:message name="retrieveMarksResponse">
+    <wsdl:part element="tns:retrieveMarksResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="retrieveMarks">
+    <wsdl:part element="tns:retrieveMarks" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="storeMarks">
+    <wsdl:part element="tns:storeMarks" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="storeMarksResponse">
+    <wsdl:part element="tns:storeMarksResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="Assignment_01">
+    <wsdl:operation name="retrieveMarks">
+      <wsdl:input message="tns:retrieveMarks" name="retrieveMarks"></wsdl:input>
+      <wsdl:output message="tns:retrieveMarksResponse" name="retrieveMarksResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="storeMarks">
+      <wsdl:input message="tns:storeMarks" name="storeMarks"></wsdl:input>
+      <wsdl:output message="tns:storeMarksResponse" name="storeMarksResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="Assignment_01ServiceSoapBinding" type="tns:Assignment_01">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="retrieveMarks">
+      <soap:operation soapAction="urn:RetrieveMarks" style="document"/>
+      <wsdl:input name="retrieveMarks">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="retrieveMarksResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="storeMarks">
+      <soap:operation soapAction="urn:StoreMarks" style="document"/>
+      <wsdl:input name="storeMarks">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="storeMarksResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Assignment_01Service">
+    <wsdl:port binding="tns:Assignment_01ServiceSoapBinding" name="Assignment_01Port">
+      <soap:address location="http://localhost:8080/E2041327_Assignment_01/services/Assignment_01Port"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>http://localhost:8080/E2041327_Assignment_01/services/Assignment_01Port?xsd=assignment_01_schema1.xsd</con:url><con:content><![CDATA[<xs:schema elementFormDefault="unqualified" targetNamespace="http://webservice.soap/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://webservice.soap/">
+  <xs:element name="retrieveMarks" type="tns:retrieveMarks"/>
+  <xs:element name="retrieveMarksResponse" type="tns:retrieveMarksResponse"/>
+  <xs:element name="storeMarks" type="tns:storeMarks"/>
+  <xs:element name="storeMarksResponse" type="tns:storeMarksResponse"/>
+  <xs:complexType name="retrieveMarks">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+      <xs:element minOccurs="0" name="arg1" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="retrieveMarksResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="storeMarks">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+      <xs:element minOccurs="0" name="arg1" type="xs:string"/>
+      <xs:element name="arg2" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="storeMarksResponse">
+    <xs:sequence/>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8080/E2041327_Assignment_01/services/Assignment_01Port</con:endpoint></con:endpoints><con:operation id="2b23fd3c-dd95-40ba-914a-492b7774b919" isOneWay="false" action="urn:RetrieveMarks" name="retrieveMarks" bindingOperationName="retrieveMarks" type="Request-Response" outputName="retrieveMarksResponse" inputName="retrieveMarks" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="b7934561-5a03-48aa-a9e1-c81d8a8188aa" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/E2041327_Assignment_01/services/Assignment_01Port</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://webservice.soap/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <web:retrieveMarks>\r
+         <!--Optional:-->\r
+         <arg0>E2041327</arg0>\r
+         <!--Optional:-->\r
+         <arg1>ITE3742</arg1>\r
+      </web:retrieveMarks>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:RetrieveMarks"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="23731216-1979-4460-b744-89ed2db5b3a8" isOneWay="false" action="urn:StoreMarks" name="storeMarks" bindingOperationName="storeMarks" type="Request-Response" outputName="storeMarksResponse" inputName="storeMarks" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="a53fe4e7-855b-431e-8953-78d1d1be0422" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/E2041327_Assignment_01/services/Assignment_01Port</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://webservice.soap/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <web:storeMarks>\r
+         <!--Optional:-->\r
+         <arg0>E2041327</arg0>\r
+         <!--Optional:-->\r
+         <arg1>ITE3742</arg1>\r
+         <arg2></arg2>\r
+      </web:storeMarks>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:StoreMarks"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>

@@ -1,0 +1,36 @@
+<xs:schema xmlns:tns="http://webservice.soap/" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="unqualified" targetNamespace="http://webservice.soap/" version="1.0">
+
+  <xs:element name="retrieveMarks" type="tns:retrieveMarks"/>
+
+  <xs:element name="retrieveMarksResponse" type="tns:retrieveMarksResponse"/>
+
+  <xs:element name="storeMarks" type="tns:storeMarks"/>
+
+  <xs:element name="storeMarksResponse" type="tns:storeMarksResponse"/>
+
+  <xs:complexType name="retrieveMarks">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+      <xs:element minOccurs="0" name="arg1" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="retrieveMarksResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="storeMarks">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+      <xs:element minOccurs="0" name="arg1" type="xs:string"/>
+      <xs:element name="arg2" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="storeMarksResponse">
+    <xs:sequence/>
+  </xs:complexType>
+
+</xs:schema>
